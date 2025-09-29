@@ -36,9 +36,12 @@
       pokemon.name.toLowerCase().includes(query)
     )
   })
+  const sortDirection = ref('asc')
   const sortedPokemons = computed(() => {
     return [...pokemonStore.pokemons].sort((a, b) =>
-      a.name.localeCompare(b.name)
+      sortDirection.value === 'asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
     )
   })
 </script>
