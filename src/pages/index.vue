@@ -7,76 +7,18 @@
       label="Rechercher un Pokémon"
       prepend-icon="mdi-magnify"
     />
-
-    <v-row>
-      <!-- Exemple de multiples colonnes avec du contenu statique pour tester l'affichage -->
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-      <v-col
-        cols="12"
-        lg="3"
-        md="4"
-        sm="6"
-        xl="2"
-      >
-        <v-card>
-          <v-card-text>Carte à venir...</v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+    <v-col
+      v-for="pokemon in pokemonStore.pokemons"
+      :key="pokemon.id"
+      cols="12"
+      lg="3"
+      md="4"
+      sm="6"
+      xl="2"
+    >
+      <v-img contain height="200" :src="`/images/${pokemon.img}`" />
+      <p>{{ pokemon.name }}</p>
+    </v-col>
   </v-container>
 </template>
 <script setup>
