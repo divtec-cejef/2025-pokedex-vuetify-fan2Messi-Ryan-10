@@ -3,9 +3,9 @@
     <h1 class="mb-6 text-center">Pokédex</h1>
 
     <v-text-field
+      clearable
       label="Rechercher un Pokémon"
       prepend-icon="mdi-magnify"
-      clearable
     />
 
     <v-row>
@@ -79,3 +79,8 @@
     </v-row>
   </v-container>
 </template>
+<script setup>
+  import { usePokemonStore } from '@/stores/pokemonStore'
+  const pokemonStore = usePokemonStore()
+  console.log(pokemonStore.pokemons)
+</script>
