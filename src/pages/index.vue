@@ -16,8 +16,7 @@
       sm="6"
       xl="2"
     >
-      <v-img contain height="200" :src="`/images/${pokemon.img}`" />
-      <p>{{ pokemon.name }}</p>
+      <PokemonCard :pokemon="pokemon" />
     </v-col>
   </v-container>
 </template>
