@@ -32,9 +32,13 @@
   const search = ref('')
   const filteredPokemons = computed(() => {
     const query = search.value.toLowerCase().trim()
-    return pokemonStore.pokemons.filter(pokemon =>
+    return sortedPokemons.value.filter(pokemon =>
       pokemon.name.toLowerCase().includes(query)
     )
   })
-
+  const sortedPokemons = computed(() => {
+    return [...pokemonStore.pokemons].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    )
+  })
 </script>
