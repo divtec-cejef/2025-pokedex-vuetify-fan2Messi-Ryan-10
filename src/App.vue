@@ -37,11 +37,14 @@
 <script setup>
   // Importation du composant MenuPrincipal pour l'en-tête de l'application
   import MenuPrincipal from '@/components/AppHeader.vue'
-  // Importation du lifecycle hook `onMounted` pour exécuter du code après que le composant a été monté
-  import { onMounted } from 'vue'
-  // Importation des magasins d'état pour l'authentification et les Pokémon
-  import { useAuthStore } from '@/stores/authStore'
   import { usePokemonStore } from '@/stores/pokemonStore'
+  import { onMounted } from 'vue'
+
+  const pokemonStore = usePokemonStore()
+
+  onMounted(() => {
+    pokemonStore.loadFavorites()
+  })
 
   // Actions à effectuer après le montage du composant (onMounted)
   onMounted(async () => {
