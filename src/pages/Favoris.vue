@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1 class="mb-6 text-center">
-      Mes Pokémons Favoris ({{ favoris.length }})
+      Mes Pokémons Favoris {{ favoris.length }}
     </h1>
 
     <v-row v-if="pokemonStore.getFavorites.length > 0">
@@ -31,6 +31,7 @@
 <script setup>
   import { usePokemonStore } from '@/stores/pokemonStore'
   import PokemonCard from '@/components/PokemonCard.vue'
+  import favoris from '@/pages/Favoris.vue'
 
   const pokemonStore = usePokemonStore()
 </script>

@@ -35,26 +35,17 @@
 </template>
 
 <script setup>
-  // Importation du composant MenuPrincipal pour l'en-tête de l'application
   import MenuPrincipal from '@/components/AppHeader.vue'
   import { usePokemonStore } from '@/stores/pokemonStore'
   import { onMounted } from 'vue'
 
   const pokemonStore = usePokemonStore()
 
-  onMounted(() => {
-    pokemonStore.loadFavorites()
-  })
-
-  // Actions à effectuer après le montage du composant (onMounted)
   onMounted(async () => {
-    // Récupération du magasin d'Authentification
-    const authStore = useAuthStore()
-    // Récupération du token d'authentification depuis le localStorage
-    authStore.loadToken()
+    // Charge les favoris si nécessaire
+    pokemonStore.loadFavorites()
 
-    // Récupération du magasin des Pokémon
-    const pokemonStore = usePokemonStore()
+    // Charge la liste complète des Pokémon
     await pokemonStore.init()
   })
 </script>
