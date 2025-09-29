@@ -7,7 +7,7 @@
       * text-center permet de centrer le texte
     -->
     <h1 class="mb-6 text-center">
-      Pokédex
+      Page d'accueil Pokédex
     </h1>
   </v-container>
 </template>

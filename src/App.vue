@@ -29,7 +29,7 @@
         - class="w-100" : Assure que le conteneur occupe toute la largeur disponible.
     -->
     <v-footer>
-      <div class="px-4 text-center w-100">2024 - Pokedex</div>
+      <div class="px-4 text-center w-100">2025 - Pokedex</div>
     </v-footer>
   </v-app>
 </template>
